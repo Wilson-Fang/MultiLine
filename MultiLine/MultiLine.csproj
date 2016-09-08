@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF327B4F-6560-4C42-A1C4-6EDFF3C40C16}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MultiLine</RootNamespace>
+    <AssemblyName>MultiLine</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\images\ui-icons_444444_256x240.png" />
+    <Content Include="css\images\ui-icons_555555_256x240.png" />
+    <Content Include="css\images\ui-icons_777620_256x240.png" />
+    <Content Include="css\images\ui-icons_777777_256x240.png" />
+    <Content Include="css\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\jquery-ui.min.css" />
+    <Content Include="css\jquery-ui.structure.css" />
+    <Content Include="css\jquery-ui.structure.min.css" />
+    <Content Include="css\jquery-ui.theme.css" />
+    <Content Include="css\jquery-ui.theme.min.css" />
+    <Content Include="css\sticky-footer.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\attach.png" />
+    <Content Include="images\favicon-starwars.ico" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\Kanahei-1\73694%402x.png" />
+    <Content Include="images\Kanahei-1\73694_key%402x.png" />
+    <Content Include="images\Kanahei-1\73695%402x.png" />
+    <Content Include="images\Kanahei-1\73695_key%402x.png" />
+    <Content Include="images\Kanahei-1\73696%402x.png" />
+    <Content Include="images\Kanahei-1\73696_key%402x.png" />
+    <Content Include="images\Kanahei-1\73697%402x.png" />
+    <Content Include="images\Kanahei-1\73697_key%402x.png" />
+    <Content Include="images\Kanahei-1\73698%402x.png" />
+    <Content Include="images\Kanahei-1\73698_key%402x.png" />
+    <Content Include="images\Kanahei-1\73699%402x.png" />
+    <Content Include="images\Kanahei-1\73699_key%402x.png" />
+    <Content Include="images\Kanahei-1\73700%402x.png" />
+    <Content Include="images\Kanahei-1\73700_key%402x.png" />
+    <Content Include="images\Kanahei-1\73701%402x.png" />
+    <Content Include="images\Kanahei-1\73701_key%402x.png" />
+    <Content Include="images\Kanahei-1\73702%402x.png" />
+    <Content Include="images\Kanahei-1\73702_key%402x.png" />
+    <Content Include="images\Kanahei-1\73703%402x.png" />
+    <Content Include="images\Kanahei-1\73703_key%402x.png" />
+    <Content Include="images\Kanahei-1\73704%402x.png" />
+    <Content Include="images\Kanahei-1\73704_key%402x.png" />
+    <Content Include="images\Kanahei-1\73705%402x.png" />
+    <Content Include="images\Kanahei-1\73705_key%402x.png" />
+    <Content Include="images\Kanahei-1\73706%402x.png" />
+    <Content Include="images\Kanahei-1\73706_key%402x.png" />
+    <Content Include="images\Kanahei-1\73707%402x.png" />
+    <Content Include="images\Kanahei-1\73707_key%402x.png" />
+    <Content Include="images\Kanahei-1\73708%402x.png" />
+    <Content Include="images\Kanahei-1\73708_key%402x.png" />
+    <Content Include="images\Kanahei-1\73709%402x.png" />
+    <Content Include="images\Kanahei-1\73709_key%402x.png" />
+    <Content Include="images\Kanahei-1\73710%402x.png" />
+    <Content Include="images\Kanahei-1\73710_key%402x.png" />
+    <Content Include="images\Kanahei-1\73711%402x.png" />
+    <Content Include="images\Kanahei-1\73711_key%402x.png" />
+    <Content Include="images\Kanahei-1\73712%402x.png" />
+    <Content Include="images\Kanahei-1\73712_key%402x.png" />
+    <Content Include="images\Kanahei-1\73713%402x.png" />
+    <Content Include="images\Kanahei-1\73713_key%402x.png" />
+    <Content Include="images\Kanahei-1\73714%402x.png" />
+    <Content Include="images\Kanahei-1\73714_key%402x.png" />
+    <Content Include="images\Kanahei-1\73715%402x.png" />
+    <Content Include="images\Kanahei-1\73715_key%402x.png" />
+    <Content Include="images\Kanahei-1\73716%402x.png" />
+    <Content Include="images\Kanahei-1\73716_key%402x.png" />
+    <Content Include="images\Kanahei-1\73717%402x.png" />
+    <Content Include="images\Kanahei-1\73717_key%402x.png" />
+    <Content Include="images\Kanahei-1\73718%402x.png" />
+    <Content Include="images\Kanahei-1\73718_key%402x.png" />
+    <Content Include="images\Kanahei-1\73719%402x.png" />
+    <Content Include="images\Kanahei-1\73719_key%402x.png" />
+    <Content Include="images\Kanahei-1\73720%402x.png" />
+    <Content Include="images\Kanahei-1\73720_key%402x.png" />
+    <Content Include="images\Kanahei-1\73721%402x.png" />
+    <Content Include="images\Kanahei-1\73721_key%402x.png" />
+    <Content Include="images\Kanahei-1\73722%402x.png" />
+    <Content Include="images\Kanahei-1\73722_key%402x.png" />
+    <Content Include="images\Kanahei-1\73723%402x.png" />
+    <Content Include="images\Kanahei-1\73723_key%402x.png" />
+    <Content Include="images\Kanahei-1\73724%402x.png" />
+    <Content Include="images\Kanahei-1\73724_key%402x.png" />
+    <Content Include="images\Kanahei-1\73725%402x.png" />
+    <Content Include="images\Kanahei-1\73725_key%402x.png" />
+    <Content Include="images\Kanahei-1\73726%402x.png" />
+    <Content Include="images\Kanahei-1\73726_key%402x.png" />
+    <Content Include="images\Kanahei-1\73727%402x.png" />
+    <Content Include="images\Kanahei-1\73727_key%402x.png" />
+    <Content Include="images\Kanahei-1\73728%402x.png" />
+    <Content Include="images\Kanahei-1\73728_key%402x.png" />
+    <Content Include="images\Kanahei-1\73729%402x.png" />
+    <Content Include="images\Kanahei-1\73729_key%402x.png" />
+    <Content Include="images\Kanahei-1\73730%402x.png" />
+    <Content Include="images\Kanahei-1\73730_key%402x.png" />
+    <Content Include="images\Kanahei-1\73731%402x.png" />
+    <Content Include="images\Kanahei-1\73731_key%402x.png" />
+    <Content Include="images\Kanahei-1\73732%402x.png" />
+    <Content Include="images\Kanahei-1\73732_key%402x.png" />
+    <Content Include="images\Kanahei-1\73733%402x.png" />
+    <Content Include="images\Kanahei-1\73733_key%402x.png" />
+    <Content Include="images\Kanahei-1\main.png" />
+    <Content Include="images\Kanahei-1\tab_off%402x.png" />
+    <Content Include="images\Kanahei-1\tab_on%402x.png" />
+    <Content Include="images\Kanahei-2\355985%402x.png" />
+    <Content Include="images\Kanahei-2\355985_key%402x.png" />
+    <Content Include="images\Kanahei-2\355986%402x.png" />
+    <Content Include="images\Kanahei-2\355986_key%402x.png" />
+    <Content Include="images\Kanahei-2\355987%402x.png" />
+    <Content Include="images\Kanahei-2\355987_key%402x.png" />
+    <Content Include="images\Kanahei-2\355988%402x.png" />
+    <Content Include="images\Kanahei-2\355988_key%402x.png" />
+    <Content Include="images\Kanahei-2\355989%402x.png" />
+    <Content Include="images\Kanahei-2\355989_key%402x.png" />
+    <Content Include="images\Kanahei-2\355990%402x.png" />
+    <Content Include="images\Kanahei-2\355990_key%402x.png" />
+    <Content Include="images\Kanahei-2\355991%402x.png" />
+    <Content Include="images\Kanahei-2\355991_key%402x.png" />
+    <Content Include="images\Kanahei-2\355992%402x.png" />
+    <Content Include="images\Kanahei-2\355992_key%402x.png" />
+    <Content Include="images\Kanahei-2\355993%402x.png" />
+    <Content Include="images\Kanahei-2\355993_key%402x.png" />
+    <Content Include="images\Kanahei-2\355994%402x.png" />
+    <Content Include="images\Kanahei-2\355994_key%402x.png" />
+    <Content Include="images\Kanahei-2\355995%402x.png" />
+    <Content Include="images\Kanahei-2\355995_key%402x.png" />
+    <Content Include="images\Kanahei-2\355996%402x.png" />
+    <Content Include="images\Kanahei-2\355996_key%402x.png" />
+    <Content Include="images\Kanahei-2\355997%402x.png" />
+    <Content Include="images\Kanahei-2\355997_key%402x.png" />
+    <Content Include="images\Kanahei-2\355998%402x.png" />
+    <Content Include="images\Kanahei-2\355998_key%402x.png" />
+    <Content Include="images\Kanahei-2\355999%402x.png" />
+    <Content Include="images\Kanahei-2\355999_key%402x.png" />
+    <Content Include="images\Kanahei-2\356000%402x.png" />
+    <Content Include="images\Kanahei-2\356000_key%402x.png" />
+    <Content Include="images\Kanahei-2\356001%402x.png" />
+    <Content Include="images\Kanahei-2\356001_key%402x.png" />
+    <Content Include="images\Kanahei-2\356002%402x.png" />
+    <Content Include="images\Kanahei-2\356002_key%402x.png" />
+    <Content Include="images\Kanahei-2\356003%402x.png" />
+    <Content Include="images\Kanahei-2\356003_key%402x.png" />
+    <Content Include="images\Kanahei-2\356004%402x.png" />
+    <Content Include="images\Kanahei-2\356004_key%402x.png" />
+    <Content Include="images\Kanahei-2\356005%402x.png" />
+    <Content Include="images\Kanahei-2\356005_key%402x.png" />
+    <Content Include="images\Kanahei-2\356006%402x.png" />
+    <Content Include="images\Kanahei-2\356006_key%402x.png" />
+    <Content Include="images\Kanahei-2\356007%402x.png" />
+    <Content Include="images\Kanahei-2\356007_key%402x.png" />
+    <Content Include="images\Kanahei-2\356008%402x.png" />
+    <Content Include="images\Kanahei-2\356008_key%402x.png" />
+    <Content Include="images\Kanahei-2\356009%402x.png" />
+    <Content Include="images\Kanahei-2\356009_key%402x.png" />
+    <Content Include="images\Kanahei-2\356010%402x.png" />
+    <Content Include="images\Kanahei-2\356010_key%402x.png" />
+    <Content Include="images\Kanahei-2\356011%402x.png" />
+    <Content Include="images\Kanahei-2\356011_key%402x.png" />
+    <Content Include="images\Kanahei-2\356012%402x.png" />
+    <Content Include="images\Kanahei-2\356012_key%402x.png" />
+    <Content Include="images\Kanahei-2\356013%402x.png" />
+    <Content Include="images\Kanahei-2\356013_key%402x.png" />
+    <Content Include="images\Kanahei-2\356014%402x.png" />
+    <Content Include="images\Kanahei-2\356014_key%402x.png" />
+    <Content Include="images\Kanahei-2\356015%402x.png" />
+    <Content Include="images\Kanahei-2\356015_key%402x.png" />
+    <Content Include="images\Kanahei-2\356016%402x.png" />
+    <Content Include="images\Kanahei-2\356016_key%402x.png" />
+    <Content Include="images\Kanahei-2\356017%402x.png" />
+    <Content Include="images\Kanahei-2\356017_key%402x.png" />
+    <Content Include="images\Kanahei-2\356018%402x.png" />
+    <Content Include="images\Kanahei-2\356018_key%402x.png" />
+    <Content Include="images\Kanahei-2\356019%402x.png" />
+    <Content Include="images\Kanahei-2\356019_key%402x.png" />
+    <Content Include="images\Kanahei-2\356020%402x.png" />
+    <Content Include="images\Kanahei-2\356020_key%402x.png" />
+    <Content Include="images\Kanahei-2\356021%402x.png" />
+    <Content Include="images\Kanahei-2\356021_key%402x.png" />
+    <Content Include="images\Kanahei-2\356022%402x.png" />
+    <Content Include="images\Kanahei-2\356022_key%402x.png" />
+    <Content Include="images\Kanahei-2\356023%402x.png" />
+    <Content Include="images\Kanahei-2\356023_key%402x.png" />
+    <Content Include="images\Kanahei-2\356024%402x.png" />
+    <Content Include="images\Kanahei-2\356024_key%402x.png" />
+    <Content Include="images\Kanahei-2\tab_off%402x.png" />
+    <Content Include="images\Kanahei-2\tab_on%402x.png" />
+    <Content Include="images\Kanahei-3\1435738%402x.png" />
+    <Content Include="images\Kanahei-3\1435738_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435739%402x.png" />
+    <Content Include="images\Kanahei-3\1435739_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435740%402x.png" />
+    <Content Include="images\Kanahei-3\1435740_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435741%402x.png" />
+    <Content Include="images\Kanahei-3\1435741_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435742%402x.png" />
+    <Content Include="images\Kanahei-3\1435742_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435743%402x.png" />
+    <Content Include="images\Kanahei-3\1435743_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435744%402x.png" />
+    <Content Include="images\Kanahei-3\1435744_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435745%402x.png" />
+    <Content Include="images\Kanahei-3\1435745_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435746%402x.png" />
+    <Content Include="images\Kanahei-3\1435746_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435747%402x.png" />
+    <Content Include="images\Kanahei-3\1435747_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435748%402x.png" />
+    <Content Include="images\Kanahei-3\1435748_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435749%402x.png" />
+    <Content Include="images\Kanahei-3\1435749_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435750%402x.png" />
+    <Content Include="images\Kanahei-3\1435750_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435751%402x.png" />
+    <Content Include="images\Kanahei-3\1435751_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435752%402x.png" />
+    <Content Include="images\Kanahei-3\1435752_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435753%402x.png" />
+    <Content Include="images\Kanahei-3\1435753_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435754%402x.png" />
+    <Content Include="images\Kanahei-3\1435754_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435755%402x.png" />
+    <Content Include="images\Kanahei-3\1435755_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435756%402x.png" />
+    <Content Include="images\Kanahei-3\1435756_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435757%402x.png" />
+    <Content Include="images\Kanahei-3\1435757_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435758%402x.png" />
+    <Content Include="images\Kanahei-3\1435758_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435759%402x.png" />
+    <Content Include="images\Kanahei-3\1435759_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435760%402x.png" />
+    <Content Include="images\Kanahei-3\1435760_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435761%402x.png" />
+    <Content Include="images\Kanahei-3\1435761_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435762%402x.png" />
+    <Content Include="images\Kanahei-3\1435762_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435763%402x.png" />
+    <Content Include="images\Kanahei-3\1435763_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435764%402x.png" />
+    <Content Include="images\Kanahei-3\1435764_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435765%402x.png" />
+    <Content Include="images\Kanahei-3\1435765_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435766%402x.png" />
+    <Content Include="images\Kanahei-3\1435766_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435767%402x.png" />
+    <Content Include="images\Kanahei-3\1435767_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435768%402x.png" />
+    <Content Include="images\Kanahei-3\1435768_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435769%402x.png" />
+    <Content Include="images\Kanahei-3\1435769_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435770%402x.png" />
+    <Content Include="images\Kanahei-3\1435770_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435771%402x.png" />
+    <Content Include="images\Kanahei-3\1435771_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435772%402x.png" />
+    <Content Include="images\Kanahei-3\1435772_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435773%402x.png" />
+    <Content Include="images\Kanahei-3\1435773_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435774%402x.png" />
+    <Content Include="images\Kanahei-3\1435774_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435775%402x.png" />
+    <Content Include="images\Kanahei-3\1435775_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435776%402x.png" />
+    <Content Include="images\Kanahei-3\1435776_key%402x.png" />
+    <Content Include="images\Kanahei-3\1435777%402x.png" />
+    <Content Include="images\Kanahei-3\1435777_key%402x.png" />
+    <Content Include="images\Kanahei-3\tab_off%402x.png" />
+    <Content Include="images\Kanahei-3\tab_on%402x.png" />
+    <Content Include="images\Kanahei-4\5995160%402x.png" />
+    <Content Include="images\Kanahei-4\5995160_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995161%402x.png" />
+    <Content Include="images\Kanahei-4\5995161_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995162%402x.png" />
+    <Content Include="images\Kanahei-4\5995162_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995163%402x.png" />
+    <Content Include="images\Kanahei-4\5995163_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995164%402x.png" />
+    <Content Include="images\Kanahei-4\5995164_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995165%402x.png" />
+    <Content Include="images\Kanahei-4\5995165_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995166%402x.png" />
+    <Content Include="images\Kanahei-4\5995166_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995167%402x.png" />
+    <Content Include="images\Kanahei-4\5995167_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995168%402x.png" />
+    <Content Include="images\Kanahei-4\5995168_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995169%402x.png" />
+    <Content Include="images\Kanahei-4\5995169_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995170%402x.png" />
+    <Content Include="images\Kanahei-4\5995170_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995171%402x.png" />
+    <Content Include="images\Kanahei-4\5995171_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995172%402x.png" />
+    <Content Include="images\Kanahei-4\5995172_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995173%402x.png" />
+    <Content Include="images\Kanahei-4\5995173_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995174%402x.png" />
+    <Content Include="images\Kanahei-4\5995174_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995175%402x.png" />
+    <Content Include="images\Kanahei-4\5995175_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995176%402x.png" />
+    <Content Include="images\Kanahei-4\5995176_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995177%402x.png" />
+    <Content Include="images\Kanahei-4\5995177_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995178%402x.png" />
+    <Content Include="images\Kanahei-4\5995178_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995179%402x.png" />
+    <Content Include="images\Kanahei-4\5995179_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995180%402x.png" />
+    <Content Include="images\Kanahei-4\5995180_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995181%402x.png" />
+    <Content Include="images\Kanahei-4\5995181_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995182%402x.png" />
+    <Content Include="images\Kanahei-4\5995182_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995183%402x.png" />
+    <Content Include="images\Kanahei-4\5995183_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995184%402x.png" />
+    <Content Include="images\Kanahei-4\5995184_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995185%402x.png" />
+    <Content Include="images\Kanahei-4\5995185_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995186%402x.png" />
+    <Content Include="images\Kanahei-4\5995186_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995187%402x.png" />
+    <Content Include="images\Kanahei-4\5995187_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995188%402x.png" />
+    <Content Include="images\Kanahei-4\5995188_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995189%402x.png" />
+    <Content Include="images\Kanahei-4\5995189_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995190%402x.png" />
+    <Content Include="images\Kanahei-4\5995190_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995191%402x.png" />
+    <Content Include="images\Kanahei-4\5995191_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995192%402x.png" />
+    <Content Include="images\Kanahei-4\5995192_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995193%402x.png" />
+    <Content Include="images\Kanahei-4\5995193_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995194%402x.png" />
+    <Content Include="images\Kanahei-4\5995194_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995195%402x.png" />
+    <Content Include="images\Kanahei-4\5995195_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995196%402x.png" />
+    <Content Include="images\Kanahei-4\5995196_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995197%402x.png" />
+    <Content Include="images\Kanahei-4\5995197_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995198%402x.png" />
+    <Content Include="images\Kanahei-4\5995198_key%402x.png" />
+    <Content Include="images\Kanahei-4\5995199%402x.png" />
+    <Content Include="images\Kanahei-4\5995199_key%402x.png" />
+    <Content Include="images\Kanahei-4\tab_off%402x.png" />
+    <Content Include="images\Kanahei-4\tab_on%402x.png" />
+    <Content Include="images\singing-1.png" />
+    <Content Include="images\singing.png" />
+    <Content Include="images\wilson.png" />
+    <Content Include="Index.html" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\Common.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\npm.js" />
+    <Content Include="sound\MSN.mp3" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="images\Kanahei-1\productInfo.meta" />
+    <Content Include="images\Kanahei-2\productInfo.meta" />
+    <Content Include="images\Kanahei-3\productInfo.meta" />
+    <Content Include="images\Kanahei-4\productInfo.meta" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57252</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50504/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
