@@ -410,7 +410,7 @@
     <Content Include="images\singing-1.png" />
     <Content Include="images\singing.png" />
     <Content Include="images\wilson.png" />
-    <Content Include="Index.html" />
+    <Content Include="index.html" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\Common.js" />
