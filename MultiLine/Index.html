@@ -125,7 +125,7 @@
         $(document).ready(function () {
             $(window).focus(function () {
                 window_focus = true;
-                document.title = 'MultiLine';
+                document.title = 'Chatroom';
             }).blur(function () {
                 window_focus = false;
             });
@@ -253,19 +253,19 @@
                 if (!isFirst) {
                     if (window_focus) {
                         isNewMsg = false;
-                        document.title = 'MultiLine';
+                        document.title = 'Chatroom';
                         document.getElementById("msn").pause();
                     }
                     else {
                         if (isNewMsg) {
-                            document.title = '(*)MultiLine';
+                            document.title = '(*)Chatroom';
                             if (isUnread) {
                                 document.getElementById("msn").play();
                             }
 
                         }
                         else {
-                            document.title = 'MultiLine';
+                            document.title = 'Chatroom';
                             document.getElementById("msn").pause();
                         }
                     }
@@ -273,7 +273,7 @@
                 else {
                     isFirst = false;
                     isNewMsg = false;
-                    document.title = 'MultiLine';
+                    document.title = 'Chatroom';
                     document.getElementById("msn").pause();
                 }
             });
@@ -386,7 +386,6 @@
         <img src="images/Kanahei-2/355998@2x.png" height="61" onclick="showImgPicker(this.src);" />
         <img src="images/Kanahei-2/355999@2x.png" height="61" onclick="showImgPicker(this.src);" />
         <img src="images/Kanahei-2/356002@2x.png" height="61" onclick="showImgPicker(this.src);" />
-        <img src="images/Kanahei-2/356003@2x.png" height="61" onclick="showImgPicker(this.src);" />
         <img src="images/Kanahei-2/356005@2x.png" height="61" onclick="showImgPicker(this.src);" />
         <img src="images/Kanahei-2/356009@2x.png" height="61" onclick="showImgPicker(this.src);" />
         <img src="images/Kanahei-2/356013@2x.png" height="61" onclick="showImgPicker(this.src);" />
