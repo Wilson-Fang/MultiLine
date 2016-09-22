@@ -125,7 +125,7 @@
         $(document).ready(function () {
             $(window).focus(function () {
                 window_focus = true;
-                document.title = 'MultiLine';
+                document.title = 'Chatroom';
             }).blur(function () {
                 window_focus = false;
             });
@@ -148,6 +148,7 @@
             var time = [];
             var talk = [];
             var linkValue = "";
+            var linkText = "";
             $.getJSON('https://spreadsheets.google.com/feeds/list/1oETHv5eEUgqJLYEjJmCjDirNsqPV21UWrfuErtyFvTo/1/public/values?alt=json', function (data) {
                 var isUnread = false;
                 for (var i = 0; i < data.feed.entry.length; i++) {
@@ -188,8 +189,12 @@
                     time[i] = "";
                     talk[i] = data.feed.entry[i].gsx$talk.$t.replace(/\n/g, "<br />");
                     linkValue = talk[i];
+                    linkText = talk[i];
                     if (linkValue.match(/https?:\/\/dropjar.com\/#/g)) {
                         linkValue = "http://1.dropjar.com/" + linkValue.substr(20) + ".zip";
+                    }
+                    if (linkText.length >= 30) {
+                        linkText = linkText.substr(0, 30) + "...";
                     }
                     if (maxTime == "") {
                         maxTime = googleYear + "/" + googleMonth + "/" + googleDay + " " + googleHour + ":" + googleMinute + ":" + googleSecond;
@@ -202,7 +207,7 @@
                         }
                         if (data.feed.entry[i].gsx$name.$t == "wilson") {
                             if (data.feed.entry[i].gsx$talk.$t.match(re_weburl)) {
-                                $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + talk[i] + "</a></div><br /><br />");
+                                $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
                             }
                             else {
                                 $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div>" + time[i] + "  " + talk[i] + "</div><br /><br />");
@@ -210,7 +215,7 @@
                         }
                         else {
                             if (data.feed.entry[i].gsx$talk.$t.match(re_weburl)) {
-                                $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + talk[i] + "</a></div><br /><br />");
+                                $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
                             }
                             else {
                                 $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div>" + time[i] + "  " + talk[i] + "</div><br /><br />");
@@ -229,7 +234,7 @@
                             }
                             if (data.feed.entry[i].gsx$name.$t == "wilson") {
                                 if (data.feed.entry[i].gsx$talk.$t.match(re_weburl)) {
-                                    $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + talk[i] + "</a></div><br /><br />");
+                                    $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
                                 }
                                 else {
                                     $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div>" + time[i] + "  " + talk[i] + "</div><br /><br />");
@@ -237,7 +242,7 @@
                             }
                             else {
                                 if (data.feed.entry[i].gsx$talk.$t.match(re_weburl)) {
-                                    $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + talk[i] + "</a></div><br /><br />");
+                                    $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
                                 }
                                 else {
                                     $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div>" + time[i] + "  " + talk[i] + "</div><br /><br />");
@@ -253,19 +258,19 @@
                 if (!isFirst) {
                     if (window_focus) {
                         isNewMsg = false;
-                        document.title = 'MultiLine';
+                        document.title = 'Chatroom';
                         document.getElementById("msn").pause();
                     }
                     else {
                         if (isNewMsg) {
-                            document.title = '(*)MultiLine';
+                            document.title = '(*)Chatroom';
                             if (isUnread) {
                                 document.getElementById("msn").play();
                             }
 
                         }
                         else {
-                            document.title = 'MultiLine';
+                            document.title = 'Chatroom';
                             document.getElementById("msn").pause();
                         }
                     }
@@ -273,7 +278,7 @@
                 else {
                     isFirst = false;
                     isNewMsg = false;
-                    document.title = 'MultiLine';
+                    document.title = 'Chatroom';
                     document.getElementById("msn").pause();
                 }
             });
