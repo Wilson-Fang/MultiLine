@@ -125,7 +125,7 @@
         $(document).ready(function () {
             $(window).focus(function () {
                 window_focus = true;
-                document.title = 'Chatroom';
+                document.title = 'MultiLine';
             }).blur(function () {
                 window_focus = false;
             });
@@ -258,19 +258,19 @@
                 if (!isFirst) {
                     if (window_focus) {
                         isNewMsg = false;
-                        document.title = 'Chatroom';
+                        document.title = 'MultiLine';
                         document.getElementById("msn").pause();
                     }
                     else {
                         if (isNewMsg) {
-                            document.title = '(*)Chatroom';
+                            document.title = '(*)MultiLine';
                             if (isUnread) {
                                 document.getElementById("msn").play();
                             }
 
                         }
                         else {
-                            document.title = 'Chatroom';
+                            document.title = 'MultiLine';
                             document.getElementById("msn").pause();
                         }
                     }
@@ -278,7 +278,7 @@
                 else {
                     isFirst = false;
                     isNewMsg = false;
-                    document.title = 'Chatroom';
+                    document.title = 'MultiLine';
                     document.getElementById("msn").pause();
                 }
             });
