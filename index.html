@@ -4,7 +4,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>MultiLine</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link href="jquery-ui.css" rel="stylesheet" />
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/sticky-footer.css" rel="stylesheet" />
     <script src="js/jquery.js"></script>
@@ -81,11 +80,13 @@
             }
     </style>
     <script type="text/javascript">
+        var googleLink = "https://docs.google.com/forms/d/1UlIgWmkFwmtwpcSlO4I-CZdWLPokRbIqdHTXWY6OpHM/formResponse";
+        var queryString = window.top.location.search.substring(1);
+        var clientName = getParameter(queryString, "name");
         var windowFocus;
         var maxTime = "";
         var isFirst = true;
         var isNewMsg = false;
-        var queryString = window.top.location.search.substring(1);
 
         $(document).ready(function () {
             $(window).focus(function () {
@@ -116,7 +117,6 @@
             var linkValue = "";
             var linkText = "";
             $.getJSON('https://spreadsheets.google.com/feeds/list/1oETHv5eEUgqJLYEjJmCjDirNsqPV21UWrfuErtyFvTo/1/public/values?alt=json', function (data) {
-                //var isUnread = false;
                 for (var i = 0; i < data.feed.entry.length; i++) {
                     var isYouTube = false;
                     var googleDateTime = data.feed.entry[i].gsx$time.$t;
@@ -169,7 +169,7 @@
                     if (maxTime == "") {
                         maxTime = googleYear + "/" + googleMonth + "/" + googleDay + " " + googleHour + ":" + googleMinute + ":" + googleSecond;
                         var bubbleCSS = "";
-                        if (getParameter(queryString, "name") == data.feed.entry[i].gsx$name.$t) {
+                        if (clientName == data.feed.entry[i].gsx$name.$t) {
                             bubbleCSS = "bubbleMe";
                         }
                         else {
@@ -216,7 +216,7 @@
                         if (maxTime < (googleYear + "/" + googleMonth + "/" + googleDay + " " + googleHour + ":" + googleMinute + ":" + googleSecond)) {
                             maxTime = googleYear + "/" + googleMonth + "/" + googleDay + " " + googleHour + ":" + googleMinute + ":" + googleSecond;
                             var bubbleCSS = "";
-                            if (getParameter(queryString, "name") == data.feed.entry[i].gsx$name.$t) {
+                            if (clientName == data.feed.entry[i].gsx$name.$t) {
                                 bubbleCSS = "bubbleMe";
                             }
                             else {
@@ -259,7 +259,6 @@
                                 }
                             }
                             isNewMsg = true;
-                            //isUnread = true;
                             var elem = document.getElementById("chat");
                             elem.scrollTop = elem.scrollHeight;
                         }
@@ -267,17 +266,13 @@
                 }
                 if (!isFirst) {
                     if (windowFocus) {
-                        //isNewMsg = false;
                         document.title = 'MultiLine';
                         document.getElementById("msn").pause();
                     }
                     else {
                         if (isNewMsg) {
-                            //if (isUnread) {
-                                document.title = '(*)MultiLine';
-                                document.getElementById("msn").play();
-                            //}
-
+                            document.title = '(*)MultiLine';
+                            document.getElementById("msn").play();
                         }
                         else {
                             document.title = 'MultiLine';
@@ -291,20 +286,6 @@
                     document.title = 'MultiLine';
                     document.getElementById("msn").pause();
                 }
-            });
-        }
-
-        function postTalk() {
-            $.ajax({
-                url: 'https://docs.google.com/forms/d/1UlIgWmkFwmtwpcSlO4I-CZdWLPokRbIqdHTXWY6OpHM/formResponse',
-                type: "post",
-                data:
-                    {
-                        "entry.50664138": $("#talk").val(),
-                        "entry.60691464": getParameter(queryString, "name")
-                    },
-                success: function () { $("#talk").val(""); reload(); },
-                error: function () { $("#talk").val(""); reload(); }
             });
         }
 
@@ -342,14 +323,27 @@
             }
         }
 
+        function postTalk() {
+            $.ajax({
+                url: googleLink,
+                type: "post",
+                data: {
+                    "entry.50664138": $("#talk").val(),
+                    "entry.60691464": clientName
+                },
+                success: function () { $("#talk").val(""); reload(); },
+                error: function () { $("#talk").val(""); reload(); }
+            });
+        }
+
         function postImg(imgSrc) {
             if (typeof (imgSrc) != "undefined") {
                 $.ajax({
-                    url: 'https://docs.google.com/forms/d/1UlIgWmkFwmtwpcSlO4I-CZdWLPokRbIqdHTXWY6OpHM/formResponse',
+                    url: googleLink,
                     type: "post",
                     data: {
                         "entry.50664138": "<img src='" + imgSrc + "' height='120'>",
-                        "entry.60691464": getParameter(queryString, "name")
+                        "entry.60691464": clientName
                     },
                     success: function () { $("#talk").val(""); reload(); },
                     error: function () { $("#talk").val(""); reload(); }
