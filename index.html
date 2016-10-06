@@ -152,6 +152,7 @@
             $.getJSON('https://spreadsheets.google.com/feeds/list/1oETHv5eEUgqJLYEjJmCjDirNsqPV21UWrfuErtyFvTo/1/public/values?alt=json', function (data) {
                 var isUnread = false;
                 for (var i = 0; i < data.feed.entry.length; i++) {
+                    var isYouTube = false;
                     var googleDateTime = data.feed.entry[i].gsx$time.$t;
                     var googleDate = (googleDateTime.indexOf("上午") != -1) ? (googleDateTime.substr(0, googleDateTime.indexOf("上午"))) : (googleDateTime.substr(0, googleDateTime.indexOf("下午")));
                     var googleTime = (googleDateTime.indexOf("上午") != -1) ? (googleDateTime.substr(googleDateTime.indexOf("上午") + 3, googleDateTime.length - googleDateTime.indexOf("上午") - 3)) : (googleDateTime.substr(googleDateTime.indexOf("下午") + 3, googleDateTime.length - googleDateTime.indexOf("下午") - 3));
@@ -190,8 +191,12 @@
                     talk[i] = data.feed.entry[i].gsx$talk.$t.replace(/\n/g, "<br />");
                     linkValue = talk[i];
                     linkText = talk[i];
-                    if (linkValue.match(/https?:\/\/dropjar.com\/#/g)) {
+                    if (linkValue.match(/https?:\/\/dropjar\.com\/#/g)) {
                         linkValue = "http://1.dropjar.com/" + linkValue.substr(20) + ".zip";
+                    }
+                    //alert(linkValue.match(/https?:\/\/.*\.youtube\.com\//g));
+                    if (linkValue.match(/https?:\/\/.+\.youtube\.com\//g)) {
+                        isYouTube = true;
                     }
                     if (linkText.length >= 30) {
                         linkText = linkText.substr(0, 30) + "...";
@@ -207,7 +212,17 @@
                         }
                         if (data.feed.entry[i].gsx$name.$t == "wilson") {
                             if (data.feed.entry[i].gsx$talk.$t.match(re_weburl)) {
-                                $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
+                                if (isYouTube) {
+                                    var youTubeID = linkValue.split('v=')[1];
+                                    var ampersandPosition = youTubeID.indexOf('&');
+                                    if (ampersandPosition != -1) {
+                                        youTubeID = youTubeID.substring(0, ampersandPosition);
+                                    }
+                                    $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div><iframe width='320' height='180' src='https://www.youtube.com/embed/" + youTubeID + "' frameborder='0' allowfullscreen></iframe></div><br /><br />");
+                                }
+                                else {
+                                    $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
+                                }
                             }
                             else {
                                 $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div>" + time[i] + "  " + talk[i] + "</div><br /><br />");
@@ -215,7 +230,17 @@
                         }
                         else {
                             if (data.feed.entry[i].gsx$talk.$t.match(re_weburl)) {
-                                $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
+                                if (isYouTube) {
+                                    var youTubeID = linkValue.split('v=')[1];
+                                    var ampersandPosition = youTubeID.indexOf('&');
+                                    if (ampersandPosition != -1) {
+                                        youTubeID = youTubeID.substring(0, ampersandPosition);
+                                    }
+                                    $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div><iframe width='320' height='180' src='https://www.youtube.com/embed/" + youTubeID + "' frameborder='0' allowfullscreen></iframe></div><br /><br />");
+                                }
+                                else {
+                                    $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
+                                }
                             }
                             else {
                                 $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div>" + time[i] + "  " + talk[i] + "</div><br /><br />");
@@ -234,7 +259,17 @@
                             }
                             if (data.feed.entry[i].gsx$name.$t == "wilson") {
                                 if (data.feed.entry[i].gsx$talk.$t.match(re_weburl)) {
-                                    $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
+                                    if (isYouTube) {
+                                        var youTubeID = linkValue.split('v=')[1];
+                                        var ampersandPosition = youTubeID.indexOf('&');
+                                        if (ampersandPosition != -1) {
+                                            youTubeID = youTubeID.substring(0, ampersandPosition);
+                                        }
+                                        $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div><iframe width='320' height='180' src='https://www.youtube.com/embed/" + youTubeID + "' frameborder='0' allowfullscreen></iframe></div><br /><br />");
+                                    }
+                                    else {
+                                        $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
+                                    }
                                 }
                                 else {
                                     $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularWilson'><img src='images/wilson.png' /></div>" + time[i] + "  " + talk[i] + "</div><br /><br />");
@@ -242,7 +277,17 @@
                             }
                             else {
                                 if (data.feed.entry[i].gsx$talk.$t.match(re_weburl)) {
-                                    $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
+                                    if (isYouTube) {
+                                        var youTubeID = linkValue.split('v=')[1];
+                                        var ampersandPosition = youTubeID.indexOf('&');
+                                        if (ampersandPosition != -1) {
+                                            youTubeID = youTubeID.substring(0, ampersandPosition);
+                                        }
+                                        $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div><iframe width='320' height='180' src='https://www.youtube.com/embed/" + youTubeID + "' frameborder='0' allowfullscreen></iframe></div><br /><br />");
+                                    }
+                                    else {
+                                        $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
+                                    }
                                 }
                                 else {
                                     $("#chat").append("<div class='" + bubbleCSS + "'><div class='circularSinging'><img src='images/singing.png' /></div>" + time[i] + "  " + talk[i] + "</div><br /><br />");
