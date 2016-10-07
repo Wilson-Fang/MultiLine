@@ -411,9 +411,13 @@
     <Content Include="images\singing.png" />
     <Content Include="images\wilson.png" />
     <Content Include="index.html" />
+    <Content Include="index.min.html">
+      <DependentUpon>index.html</DependentUpon>
+    </Content>
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\Common.js" />
+    <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery-ui.js" />
     <Content Include="js\jquery-ui.min.js" />
     <Content Include="js\jquery.js" />
