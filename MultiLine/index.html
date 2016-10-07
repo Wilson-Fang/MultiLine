@@ -84,8 +84,8 @@
         var queryString = window.top.location.search.substring(1);
         var clientName = getParameter(queryString, "name");
         var windowFocus;
-        var maxTime = "";
         var isFirst = true;
+        var maxTime = "";
         var isNewMsg = false;
 
         $(document).ready(function () {
@@ -113,6 +113,7 @@
 
         function getTalk() {
             $.getJSON('https://spreadsheets.google.com/feeds/list/1oETHv5eEUgqJLYEjJmCjDirNsqPV21UWrfuErtyFvTo/1/public/values?alt=json', function (data) {
+                var isPlay = false;
                 for (var i = 0; i < data.feed.entry.length; i++) {
                     var time = [];
                     var talk = [];
@@ -259,6 +260,7 @@
                                 }
                             }
                             isNewMsg = true;
+                            isPlay = true;
                             var elem = document.getElementById("chat");
                             elem.scrollTop = elem.scrollHeight;
                         }
@@ -272,7 +274,9 @@
                     else {
                         if (isNewMsg) {
                             document.title = '(*)MultiLine';
-                            document.getElementById("msn").play();
+                            if (isPlay) {
+                                document.getElementById("msn").play();
+                            }
                         }
                         else {
                             document.title = 'MultiLine';
