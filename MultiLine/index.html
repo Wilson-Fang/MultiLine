@@ -185,7 +185,7 @@
                         }
                     }
                     if (isInsert) {
-                        var who = clientName;
+                        var who = data.feed.entry[i].gsx$name.$t;
                         var whoCSS = "circularWilson";
                         if (who != "wilson") {
                             who = "singing";
