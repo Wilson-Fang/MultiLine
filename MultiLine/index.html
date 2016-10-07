@@ -54,7 +54,7 @@
             border-radius: 50%;
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
-            background: url('images/wilson.png') no-repeat;
+            background: url("images/wilson.png") no-repeat;
             display: inline-block;
         }
 
@@ -69,7 +69,7 @@
             border-radius: 50%;
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
-            background: url('images/singing.png') no-repeat;
+            background: url("images/singing.png") no-repeat;
             display: inline-block;
         }
 
@@ -111,7 +111,7 @@
         }
 
         function getTalk() {
-            $.getJSON('https://spreadsheets.google.com/feeds/list/1oETHv5eEUgqJLYEjJmCjDirNsqPV21UWrfuErtyFvTo/1/public/values?alt=json', function (data) {
+            $.getJSON("https://spreadsheets.google.com/feeds/list/1oETHv5eEUgqJLYEjJmCjDirNsqPV21UWrfuErtyFvTo/1/public/values?alt=json", function (data) {
                 var isPlay = false;
                 for (var i = 0; i < data.feed.entry.length; i++) {
                     var time = [];
@@ -193,8 +193,8 @@
                         }
                         if (data.feed.entry[i].gsx$talk.$t.match(re_weburl)) {
                             if (isYouTube) {
-                                var youTubeID = linkValue.split('v=')[1];
-                                var ampersandPosition = youTubeID.indexOf('&');
+                                var youTubeID = linkValue.split("v=")[1];
+                                var ampersandPosition = youTubeID.indexOf("&");
                                 if (ampersandPosition != -1) {
                                     youTubeID = youTubeID.substring(0, ampersandPosition);
                                 }
@@ -215,18 +215,18 @@
                 }
                 if (!isFirst) {
                     if (windowFocus) {
-                        document.title = 'MultiLine';
+                        document.title = "MultiLine";
                         document.getElementById("msn").pause();
                     }
                     else {
                         if (isNewMsg) {
-                            document.title = '(*)MultiLine';
+                            document.title = "(*)MultiLine";
                             if (isPlay) {
                                 document.getElementById("msn").play();
                             }
                         }
                         else {
-                            document.title = 'MultiLine';
+                            document.title = "MultiLine";
                             document.getElementById("msn").pause();
                         }
                     }
@@ -234,7 +234,7 @@
                 else {
                     isFirst = false;
                     isNewMsg = false;
-                    document.title = 'MultiLine';
+                    document.title = "MultiLine";
                     document.getElementById("msn").pause();
                 }
             });
