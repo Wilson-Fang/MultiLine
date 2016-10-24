@@ -119,6 +119,7 @@
                     var linkValue = "";
                     var linkText = "";
                     var isYouTube = false;
+                    var isImage = false;
                     var googleDateTime = data.feed.entry[i].gsx$time.$t;
                     var googleDate = (googleDateTime.indexOf("上午") != -1) ? (googleDateTime.substr(0, googleDateTime.indexOf("上午"))) : (googleDateTime.substr(0, googleDateTime.indexOf("下午")));
                     var googleTime = (googleDateTime.indexOf("上午") != -1) ? (googleDateTime.substr(googleDateTime.indexOf("上午") + 3, googleDateTime.length - googleDateTime.indexOf("上午") - 3)) : (googleDateTime.substr(googleDateTime.indexOf("下午") + 3, googleDateTime.length - googleDateTime.indexOf("下午") - 3));
@@ -160,6 +161,9 @@
                     if (linkValue.match(/https?:\/\/.+\.youtube\.com\//g)) {
                         isYouTube = true;
                     }
+                    if (linkValue.match(/https?:.+\.(jpg|jpeg|png|bmp|gif)/gi)) {
+                        isImage = true;
+                    }
                     if (linkValue.match(/https?:\/\/dropjar\.com\/#/g)) {
                         linkValue = "http://1.dropjar.com/" + linkValue.substr(20) + ".zip";
                     }
@@ -200,7 +204,10 @@
                                 }
                                 $("#chat").append("<div class='" + bubbleCSS + "'><div class='" + whoCSS + "'><img src='images/" + who + ".png' /></div><div><iframe width='400' height='200' src='https://www.youtube.com/embed/" + youTubeID + "' frameborder='0' allowfullscreen></iframe></div></div><br /><br />");
                             }
-                            else {
+                            if (isImage) {
+                                $("#chat").append("<div class='" + bubbleCSS + "'><div class='" + whoCSS + "'><img src='images/" + who + ".png' /></div><div><img src='" + linkValue + "' /></div></div><br /><br />");
+                            }
+                            if (!isYouTube && !isImage) {
                                 $("#chat").append("<div class='" + bubbleCSS + "'><div class='" + whoCSS + "'><img src='images/" + who + ".png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
                             }
                         }
