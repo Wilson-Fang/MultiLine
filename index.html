@@ -17,9 +17,9 @@ else{if(maxTime<(googleYear+"/"+googleMonth+"/"+googleDay+" "+googleHour+":"+goo
 if(isInsert){var who=data.feed.entry[i].gsx$name.$t;var whoCSS="circularWilson";if(who!="wilson"){who="singing";whoCSS="circularSinging";}
 if(data.feed.entry[i].gsx$talk.$t.match(re_weburl)){if(isYouTube){var youTubeID=linkValue.split("v=")[1];var ampersandPosition=youTubeID.indexOf("&");if(ampersandPosition!=-1){youTubeID=youTubeID.substring(0,ampersandPosition);}
 $("#chat").append("<div class='"+bubbleCSS+"'><div class='"+whoCSS+"'><img src='images/"+who+".png' /></div><div><iframe width='400' height='200' src='https://www.youtube.com/embed/"+youTubeID+"' frameborder='0' allowfullscreen></iframe></div></div><br /><br />");}
-if(isImage){$("#chat").append("<div class='"+bubbleCSS+"'><div class='"+whoCSS+"'><img src='images/"+who+".png' /></div><div><img src='"+linkValue+"' height='200' /></div></div><br /><br />");}
+if(isImage){$("#chat").append("<div class='"+bubbleCSS+"'><div class='"+whoCSS+"'><img src='images/"+who+".png' /></div>   <img src='"+linkValue+"' height='200' /></div><br /><br />");}
 if(!isYouTube&&!isImage){$("#chat").append("<div class='"+bubbleCSS+"'><div class='"+whoCSS+"'><img src='images/"+who+".png' /></div>"+time[i]+"  <a href='"+linkValue+"' target='_blank'>"+linkText+"</a></div><br /><br />");}}
-else{$("#chat").append("<div class='"+bubbleCSS+"'><div class='"+whoCSS+"'><img src='images/"+who+".png' /></div>"+time[i]+"  "+talk[i]+"</div><br /><br />");}
+else{$("#chat").append("<div class='"+bubbleCSS+"'><div class='"+whoCSS+"'><img src='images/"+who+".png' /></div>"+time[i]+"   "+talk[i]+"</div><br /><br />");}
 isNewMsg=true;isPlay=true;var elem=document.getElementById("chat");elem.scrollTop=elem.scrollHeight;}}
 if(!isFirst){if(windowFocus){document.title="MultiLine";document.getElementById("msn").pause();}
 else{if(isNewMsg){document.title="(*)MultiLine";if(isPlay){document.getElementById("msn").play();}}
