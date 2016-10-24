@@ -205,7 +205,7 @@
                                 $("#chat").append("<div class='" + bubbleCSS + "'><div class='" + whoCSS + "'><img src='images/" + who + ".png' /></div><div><iframe width='400' height='200' src='https://www.youtube.com/embed/" + youTubeID + "' frameborder='0' allowfullscreen></iframe></div></div><br /><br />");
                             }
                             if (isImage) {
-                                $("#chat").append("<div class='" + bubbleCSS + "'><div class='" + whoCSS + "'><img src='images/" + who + ".png' /></div><div><img src='" + linkValue + "' /></div></div><br /><br />");
+                                $("#chat").append("<div class='" + bubbleCSS + "'><div class='" + whoCSS + "'><img src='images/" + who + ".png' /></div><div><img src='" + linkValue + "' height='200' /></div></div><br /><br />");
                             }
                             if (!isYouTube && !isImage) {
                                 $("#chat").append("<div class='" + bubbleCSS + "'><div class='" + whoCSS + "'><img src='images/" + who + ".png' /></div>" + time[i] + "  <a href='" + linkValue + "' target='_blank'>" + linkText + "</a></div><br /><br />");
